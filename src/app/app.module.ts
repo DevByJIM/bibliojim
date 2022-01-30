@@ -8,12 +8,8 @@ import { AuthorsComponent } from './components/authors/authors.component';
 import { ListbookComponent } from './components/listbook/listbook.component';
 import { ErrorComponent } from './components/error/error.component';
 import { HomeComponent } from './components/home/home.component';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
-const routes: Routes = [
-  {path:'', component: AppComponent},
-  {path:'contact', component: ContactComponent},
-]
 
 
 @NgModule({

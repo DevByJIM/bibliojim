@@ -1,0 +1,25 @@
+
+
+/* ESTILOS GENERALES */
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+   background: #DDD; 
+}
+
+.container{
+    width: 500px;
+    margin: 0 auto;
+}
+
+/* MENU SUPERIOR DE LA WEB */
+
+ul{
+    display: flex;
+}
