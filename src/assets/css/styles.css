@@ -10,16 +10,35 @@
 }
 
 body{
-   background: #DDD; 
+   width: 100%;
+   background: url('../img/pattern.png'); 
+   position: fixed;
 }
 
 .container{
-    width: 500px;
+    outline: 1px solid #48e;
+    width: 70%;
+    height: 1000px;
     margin: 0 auto;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 /* MENU SUPERIOR DE LA WEB */
-
+.header h1{
+    font-family: 'Josefin Sans', sans-serif;
+    color: #FFF;
+    text-align: center;
+    font-size: 2.5em;
+    padding-top: 20px;
+    text-shadow: 0px 0px 3px #555;
+}
 ul{
     display: flex;
+    justify-content: space-around;
+    background: blueviolet;
+    padding: 10px;
+}
+.header li a{
+    color: #DDD;
+    
 }
