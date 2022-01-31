@@ -1,24 +1,21 @@
+<header class="header">
 
-<div class="container">
+  <h1>Mis libros. ByJIM®2022</h1>
+<div class="navbar">
 
-  <header class="header">
-
-    <h1>Mis libros. ByJIM®2022</h1>
-    
-    <ul>
-      <li><a [routerLink]="['/']">INICIO</a></li>
-      <li><a [routerLink]="['/listbooks']">LIBROS</a></li>
-      <li><a [routerLink]="['/authors']">AUTORES</a></li>
-      <li><a [routerLink]="['/contact']">CONTACTO</a></li>
-    </ul>
-    
-  </header>
-
-<section id="section" class="section">
-  <router-outlet></router-outlet>
-</section>
-
+  <ul>
+    <li><a [routerLink]="['/home']" [routerLinkActive]="['actived']" >INICIO</a></li>
+    <li><a [routerLink]="['/listbooks']" [routerLinkActive]="['actived']">LIBROS</a></li>
+    <li><a [routerLink]="['/authors']" [routerLinkActive]="['actived']">AUTORES</a></li>
+    <li><a [routerLink]="['/contact']" [routerLinkActive]="['actived']">CONTACTO</a></li>
+  </ul>
 </div>
 
+</header>
 
+<div class="container">
+  <section id="section" class="section">
+    <router-outlet></router-outlet>
+  </section>
 
+</div>
