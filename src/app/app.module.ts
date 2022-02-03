@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { LibroService } from './services/libro.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { ListbookComponent } from './components/listbook/listbook.component';
 import { ErrorComponent } from './components/error/error.component';
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
+import { AddlibroComponent } from './components/addlibro/addlibro.component';
 
 
 
@@ -21,7 +23,8 @@ import { RouterModule } from '@angular/router';
     AuthorsComponent,
     ListbookComponent,
     ErrorComponent,
-    HomeComponent
+    HomeComponent,
+    AddlibroComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +33,7 @@ import { RouterModule } from '@angular/router';
     FormsModule
   ],
   providers: [
+    LibroService
     ],
   bootstrap: [AppComponent]
 })

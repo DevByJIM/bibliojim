@@ -12,9 +12,20 @@ export class LibroService{
         private _http :HttpClient
         ){
         this.url = Global.url;
+        console.log(this.url + "------------------------------------------");
+
     }
 
-    testService(){
-        return 'Probando el servicio ByJIM';
+    listadoLibros():Observable<any>{
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+        return this._http.get(this.url + 'books',{headers: headers});
+    }
+
+    saveLibro(libro: Libro){
+        let params = JSON.stringify(libro);
+        let headers = new HttpHeaders().set('Content-Type','application/json');
+
+        return this._http.post(this.url + 'saveLibro', params, {headers: headers});
     }
 }

@@ -1,1 +1,15 @@
-<p>listbook works!</p>
+<h2>listbook works!</h2>
+
+<div class="tapalibro" *ngFor="let libro of libros">
+    <span>Titulo: </span>
+    <label>{{libro.titulo}}</label>
+    <br>
+    <span>Autor: </span>
+    <label>{{libro.autor}}</label>
+    <br>
+    <span>Paginas: </span>
+    <label>{{libro.paginas}}</label>
+    <br>
+    <span>Fechor: </span>
+    <label>{{libro.fechor}}</label>
+</div>
