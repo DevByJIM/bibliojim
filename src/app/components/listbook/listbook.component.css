@@ -1,11 +1,73 @@
 *{
     margin: 0;
-    padding: 0;
+    padding: 0;  
 }
 
-.tapalibro{
-    outline: 1px solid #444;
-    margin: 10px;
+.container{
+    background-color: azure;
+    width: 100%;
+}
+
+.listalibros{
+    background-color: rgba(118, 211, 156, 0.465);
+    width: 100%;
+    padding: 1em
+}
+
+.acordeon{
+    background-color: #4488ee55;
+}
+
+.acordeon .bloque{
+    background-color: yellow;
+    margin-top: 5px;
+}
+.acordeon .bloque__header{
+    background-color: rgb(46, 89, 209);
+    padding: 1em;
+}
+.acordeon .bloque__content{
+    background-color: darkgreen;
+    padding: 0em;
+    height: 0;
+    color: #FFF;
+    overflow: hidden;
+}
+.acordeon .bloque.activo .bloque__content{
+    height: auto;
+    padding: 1em;
+}
+
+.itemlibro{
+    display: grid;
+    cursor: pointer;
+    grid-template-columns: 70px 1fr 40px;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "area1 area2 area3" "area1 area2 area3" "area1 area4 area3" ;
+    width: 98%;
+    /* height: 60px; */
     padding: 10px;
-    box-shadow: 0 0 5px #555;
+    margin-bottom: 5px;
+    box-shadow: 2px 2px 10px #555;
+}
+.itemlibro img{
+    grid-area: area1;
+    height: 100%;
+}
+.itemlibro .titulo{
+    grid-area: area2;
+    font-size: 2.2em;
+}
+.itemlibro .autor{
+    grid-area: area4;
+    font-size: 1.2em;
+    font-style: italic;
+}
+.itemlibro .simbolo{
+    grid-area: area3;
+    font-size: 3em;
+}
+
+.ficha{
+    height: 200px;
 }
