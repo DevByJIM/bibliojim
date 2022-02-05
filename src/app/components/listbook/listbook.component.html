@@ -1,20 +1,21 @@
 <section class="container">
 
-    <div class="listalibros">
 
-
-        <div class="acordeon" >
-            <div class="bloque" *ngFor="let libro of libros">
-                <div class="bloque__header">
-                    <h3>{{libro.titulo}}</h3>
-                </div>
-                <div class="bloque__content">
-                    <h3>{{libro.autor}}</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis laudantium itaque consectetur, nemo repellat totam illo sit molestiae sed, obcaecati vitae! Nobis fuga maiores, optio quia atque provident vero quasi.</p>
-                </div>
+    <div class="acordeon">
+        <div class="bloque" *ngFor="let libro of libros">
+            <div class="bloque__header">
+                <img src="../../../assets/img/pattern.png" alt="portada"/>
+                <h2>{{libro.titulo}}</h2>
+                <h4>{{libro.autor}}</h4>
+            </div>
+            <div class="bloque__content">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis laudantium itaque consectetur,
+                    nemo repellat totam illo sit molestiae sed, obcaecati vitae! Nobis fuga maiores, optio quia atque
+                    provident vero quasi.</p>
             </div>
         </div>
-
     </div>
+
+
 
 </section>
