@@ -49,16 +49,23 @@ export class ListbookComponent implements OnInit,AfterViewChecked {
   }
 
   cargarAcordeon(): void{
-    const bloque = document.querySelectorAll('.bloque')
-    const bloque_header = document.querySelectorAll('.bloque__header');
+    const block = document.querySelectorAll('.block')
+    const block_header = document.querySelectorAll('.block__header');
+    
+    
+    block_header.forEach( (obj, i) =>{ 
+      const icn = obj.querySelector('.icon');
+      
+      block_header[i].addEventListener('click',()=>{
+        
+        block.forEach((content, i)=>{
+          block[i].classList.remove('activo');
+          const icns = block[i].querySelector('.icon');
+          if(icns != null) icns.textContent='˅';
+        })
 
-
-    bloque_header.forEach( (obj, i) =>{     
-      bloque_header[i].addEventListener('click',()=>{
-          bloque.forEach((content, i)=>{
-            bloque[i].classList.remove('activo');
-          })
-         bloque[i].classList.add('activo');
+        block[i].classList.add('activo');
+        if(icn != null) icn.textContent='˄';
        })
     });
 
