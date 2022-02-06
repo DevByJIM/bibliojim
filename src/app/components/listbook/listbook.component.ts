@@ -1,7 +1,9 @@
 import { HttpResponse } from '@angular/common/http';
 import { Component, OnInit, AfterViewChecked  } from '@angular/core';
 import { Libro } from 'src/app/models/libro';
+import { Book } from 'src/app/models/book';
 import { LibroService } from './../../services/libro.service';
+import { BookService } from './../../services/book.service';
 
 @Component({
   selector: 'app-listbook',
@@ -11,25 +13,40 @@ import { LibroService } from './../../services/libro.service';
 export class ListbookComponent implements OnInit,AfterViewChecked {
 
   public libros: Libro[] = [];
-
+  public books: Book[] = [];
   
   
   
-  constructor(private _libroService: LibroService) {
+  constructor(
+    private _libroService: LibroService,
+    private _bookService: BookService) {
     
   }
   ngAfterViewChecked(): void {
-    this.cargarAcordeon();
+    this.cargarAcordeonLibros();
   }
   
-  ngOnInit(): void {
-    
-    this.cargarDatos();
+  ngOnInit(): void {  
+    this.cargarLibros();
+    this.cargarBooks();   
   }
 
-  
+  cargarBooks():void{
+    this._bookService.listadoBooks().subscribe({
+      next:(v) =>{
+        this.books = v.books;
+      },
+      error: (e) => {
+        console.error(e);
+      },
+      complete: () => {
+        console.info('Carga de book Completada'); 
+        console.log(this.books);       
+      }
+    })
+  }
 
-  cargarDatos():void{
+  cargarLibros():void{
     this._libroService.listadoLibros().subscribe(
       {
         next: (v) => {
@@ -40,7 +57,7 @@ export class ListbookComponent implements OnInit,AfterViewChecked {
           console.error(e);
         },
         complete: () => {
-          console.info('Completo');        
+          console.info('Carga de libros Completada');        
         }
       }
     );
@@ -48,7 +65,7 @@ export class ListbookComponent implements OnInit,AfterViewChecked {
 
   }
 
-  cargarAcordeon(): void{
+  cargarAcordeonLibros(): void{
     const block = document.querySelectorAll('.block')
     const block_header = document.querySelectorAll('.block__header');
     

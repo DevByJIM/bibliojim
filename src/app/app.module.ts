@@ -13,6 +13,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
 import { AddlibroComponent } from './components/addlibro/addlibro.component';
+import { BookService } from './services/book.service';
 
 
 
@@ -33,7 +34,8 @@ import { AddlibroComponent } from './components/addlibro/addlibro.component';
     FormsModule
   ],
   providers: [
-    LibroService
+    LibroService,
+    BookService
     ],
   bootstrap: [AppComponent]
 })
