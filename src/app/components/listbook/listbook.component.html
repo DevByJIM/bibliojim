@@ -2,7 +2,7 @@
 
 
     <div class="acordeon">
-        <div class="block" *ngFor="let book of books">
+        <div class="block activo" *ngFor="let book of books">
             <div class="block__header">
                 <img src="../../../assets/img/amandablack1.jpg" alt="portada" />
                 <div class="block__texts">
@@ -32,14 +32,20 @@
                     </div>
 
                     <div class="observaciones">
-                        <p>{{book.myb_synopsis}}</p>
-                        <p>{{book.myb_observ}}</p>
+                        <div class="nota ">
+                            <h3>SYNOPSIS</h3>
+                            <p>sdf{{book.myb_synopsis}}</p>
+                        </div>
+                        <div class="nota ">
+                            <h3>OBSERVACIONES</h3>
+                            <p>rrrr{{book.myb_observ}}</p>
+                        </div>
                     </div>
                 </section>
 
                 <aside class="aside">
-                    <img src="../../../assets/img/amandablack1.jpg" alt="portada" />
                     <h4>PUBLICADO EN {{book.myb_fecpub}}</h4>
+                    <img src="../../../assets/img/amandablack1.jpg" alt="portada" />
                 </aside>
 
             </div>
