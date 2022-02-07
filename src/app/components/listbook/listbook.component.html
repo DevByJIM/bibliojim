@@ -2,14 +2,14 @@
 
 
     <div class="acordeon">
-        <div class="block activo" *ngFor="let book of books">
+        <div class="block" *ngFor="let book of books">
             <div class="block__header">
-                <img src="../../../assets/img/amandablack1.jpg" alt="portada" />
+                <img src="" alt="portada" />
                 <div class="block__texts">
                     <h2>{{book.myb_title}}</h2>
                     <h4>{{book.myb_author}}</h4>
                 </div>
-                <h3 class="icon">˅</h3>
+                <span class="icon material-icons">expand_more</span>
             </div>
             <div class="block__content">
 
@@ -18,7 +18,7 @@
                         <h2>{{book.myb_title}}</h2>
                         <a href="#">{{book.myb_author}}</a>
                     </div>
-
+                    <hr>
                     <div class="detalles">
                         <div class="detleft">
                             <p>GENERO: {{book.myb_gender}}</p>
@@ -30,7 +30,7 @@
                             <p>{{book.myb_value}}</p>
                         </div>
                     </div>
-
+                    <hr>
                     <div class="observaciones">
                         <div class="nota ">
                             <h3>SYNOPSIS</h3>
@@ -45,7 +45,7 @@
 
                 <aside class="aside">
                     <h4>PUBLICADO EN {{book.myb_fecpub}}</h4>
-                    <img src="../../../assets/img/amandablack1.jpg" alt="portada" />
+                    <img class="portada" src="" alt="portada" />
                 </aside>
 
             </div>

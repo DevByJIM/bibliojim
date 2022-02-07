@@ -4,6 +4,8 @@ import { Libro } from 'src/app/models/libro';
 import { Book } from 'src/app/models/book';
 import { LibroService } from './../../services/libro.service';
 import { BookService } from './../../services/book.service';
+import { Global } from 'src/app/services/global';
+
 
 @Component({
   selector: 'app-listbook',
@@ -68,21 +70,29 @@ export class ListbookComponent implements OnInit,AfterViewChecked {
   cargarAcordeonLibros(): void{
     const block = document.querySelectorAll('.block')
     const block_header = document.querySelectorAll('.block__header');
-    
+    // const block_header = document.querySelectorAll('.block__header');
+    const cover1 = document.querySelectorAll('.portada');
     
     block_header.forEach( (obj, i) =>{ 
       const icn = obj.querySelector('.icon');
+      const cover = obj.querySelector('img');
+      
+      cover?.setAttribute('src', Global.urlCover +  this.books[i].myb_cover)
+      cover1[i]?.setAttribute('src', Global.urlCover +  this.books[i].myb_cover)
+      
       
       block_header[i].addEventListener('click',()=>{
         
         block.forEach((content, i)=>{
-          block[i].classList.remove('activo');
-          const icns = block[i].querySelector('.icon');
-          if(icns != null) icns.textContent='˅';
+          
+          if(block[i].firstChild!=content){
+            block[i].classList.remove('activo');
+            const icns = block[i].querySelector('.icon');
+            if(icns != null) icns.textContent='expand_more';
+          }         
         })
-
         block[i].classList.add('activo');
-        if(icn != null) icn.textContent='˄';
+        if(icn != null) icn.textContent='expand_less';
        })
     });
 
