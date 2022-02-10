@@ -5,72 +5,84 @@
 }
 
 .container{
+    display: flex;
+    flex-flow: column nowrap;
     width: 100%;
+    background-color: #48e;
+    
 }
+.tools{
+    height: 3em;
+}
+
 
 /* ACORDEON DE LIBROS */
 
-.acordeon{
-    width: 100%;
-    padding: 1em;   
+.acordion__block{
+    cursor: pointer;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: .3em;
+    background-color: #DDD;
+    color: #555;
+    border-radius: .1em .5em .5em .1em; 
+    box-shadow: 0 0 3px #333;  
 }
 
-.acordeon .block{
-    margin-top: 5px;
+.block__header{
+    display: flex;   
 }
-.acordeon .block__header{
+
+.block__content{
     display: flex;
-    background-color: #BBB;
-    border-radius: .5em .5em .1em .1em;
-    
+    padding: 0em;
+    height: 0em;
+    overflow: hidden;
+    transition: all .2s ease ;
 }
 
-.acordeon .block__header img{
-    height: 3.3em; 
-    margin: .3em 1em;
-    box-shadow: .2em .2em .2em #555;
+.acordion__block:active .block__content {   
+    height: 30em;
+    padding: 1em; 
 }
-.acordeon .block__header .block__texts{
+
+.header__cover{
+    height: 3.3em; 
+    margin: .5em .5em;
+    box-shadow: .2em .2em .1em #555;
+}
+.header__texts{
     width: 86%;
     padding: .1em;
     margin-left: 1em;
 }
 
-.acordeon .block__header .block__texts h2{
+.header__texts h2{
     font-size: 2em;
 }
-.acordeon .block__header .block__texts h4{
+.header__texts h4{
     font-size: 1.2em;
     font-style: italic;
 }
-.acordeon .block__header .icon{
+.icon--right{
     width: 8%;
     padding-top: .4em;
-    text-align: center;
+    text-align: right;
     font-size: 2.2em;
     font-family: 'Material Icons';
+    
 }
 
 /* CONTENIDO DEL ACORDEON */
-.acordeon .block__content{
-    display: flex;
-    flex-flow: row nowrap;
-    background-color: #DDD;
-    border-radius: 0 0 .5em .5em;
-    padding: 0em;
-    height: 0;
-    color: #333;
-    overflow: hidden;
-    transition: all .5s ease ;
-}
 
-.acordeon .block.activo .block__content{
+
+/* .acordeon .block.activo .block__content{
     height: 34em;
     padding: 1em;
 }
 .acordeon .block.activo .block__header img{
     box-shadow: .2em .2em .2em #FFF;
-}
+} */
 
 /* DATOS EN LA ZONA IZQUIERDA DE LA FICHA */
 .block__content .datos{
@@ -112,7 +124,7 @@
 .block__content .observaciones{
     display:flex;
     flex-flow: row nowrap; 
-    height: 50%; 
+    height: 40%; 
 }
 
 .observaciones .nota{

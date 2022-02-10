@@ -1,32 +1,30 @@
 /* MENU SUPERIOR DE LA WEB */
 .header{
     width: 100%;
-    outline: 1px solid #48e;
-    position: fixed;
     color: #FFF;
 }
 
 .header h1{
     text-align: center;
     font-size: 2.5em;
-    padding-top: 20px;
-    padding-bottom: 10px;
+    padding-top: 1.6em;
+    padding-bottom: 0.3em;
     text-shadow: 1px 1px 3px #333;
 }
 .navbar{
     background: #CCC;
     width: 100%;
-    position: fixed;   
+    position: fixed; 
 }
 ul{
+    padding: 5px;  
     display: flex;
     justify-content: space-around;
     margin: 0 auto;
     width: 80%;
     max-width: 1760px;
     box-shadow: 0 0 15px #555;
-    padding-left: 5px;
-    padding-right: 5px;
+
 }
 .header li{
     padding: 10px;

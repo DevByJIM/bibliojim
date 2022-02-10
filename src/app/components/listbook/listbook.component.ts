@@ -16,7 +16,7 @@ export class ListbookComponent implements OnInit,AfterViewChecked {
 
   public libros: Libro[] = [];
   public books: Book[] = [];
-  
+  public urlcover : String = Global.urlCover;
   
   
   constructor(
@@ -25,11 +25,11 @@ export class ListbookComponent implements OnInit,AfterViewChecked {
     
   }
   ngAfterViewChecked(): void {
-    this.cargarAcordeonLibros();
+    // this.cargarAcordeonLibros();   
   }
   
   ngOnInit(): void {  
-    this.cargarLibros();
+    // this.cargarLibros();
     this.cargarBooks();   
   }
 
@@ -67,22 +67,24 @@ export class ListbookComponent implements OnInit,AfterViewChecked {
 
   }
 
+  
+
   cargarAcordeonLibros(): void{
     const block = document.querySelectorAll('.block')
     const block_header = document.querySelectorAll('.block__header');
-    // const block_header = document.querySelectorAll('.block__header');
+
     const cover1 = document.querySelectorAll('.portada');
     
-    block_header.forEach( (obj, i) =>{ 
-      const icn = obj.querySelector('.icon');
-      const cover = obj.querySelector('img');
+     block_header.forEach( (obj, i) =>{ 
+       const icn = obj.querySelector('.icon');
+       const cover = obj.querySelector('img');
       
-      cover?.setAttribute('src', Global.urlCover +  this.books[i].myb_cover)
-      cover1[i]?.setAttribute('src', Global.urlCover +  this.books[i].myb_cover)
+       cover?.setAttribute('src', Global.urlCover +  this.books[i].myb_cover)
+       cover1[i]?.setAttribute('src', Global.urlCover +  this.books[i].myb_cover)
       
       
       block_header[i].addEventListener('click',()=>{
-        
+
         block.forEach((content, i)=>{
           
           if(block[i].firstChild!=content){

@@ -1,15 +1,17 @@
-<section class="container">
+<div class="container">
 
+    <div class="tools">
 
-    <div class="acordeon">
-        <div class="block" *ngFor="let book of books">
+    </div>
+    <div class="acordion">
+        <div class="acordion__block" *ngFor="let book of books">
             <div class="block__header">
-                <img src="" alt="portada" />
-                <div class="block__texts">
+                <img class="header__cover" src={{urlcover}}{{book.myb_cover}} alt="portada" />
+                <div class="header__texts">
                     <h2>{{book.myb_title}}</h2>
                     <h4>{{book.myb_author}}</h4>
                 </div>
-                <span class="icon material-icons">expand_more</span>
+                <span class="material-icons icon--right">expand_more</span>
             </div>
             <div class="block__content">
 
@@ -45,13 +47,11 @@
 
                 <aside class="aside">
                     <h4>PUBLICADO EN {{book.myb_fecpub}}</h4>
-                    <img class="portada" src="" alt="portada" />
+                    <img class="portada" src={{urlcover}}{{book.myb_cover}} alt="portada" />
                 </aside>
 
             </div>
         </div>
     </div>
 
-
-
-</section>
+</div>
