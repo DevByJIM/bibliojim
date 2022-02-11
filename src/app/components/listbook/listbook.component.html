@@ -5,52 +5,45 @@
     </div>
     <div class="acordion">
         <div class="acordion__block" *ngFor="let book of books">
-            <div class="block__header">
-                <img class="header__cover" src={{urlcover}}{{book.myb_cover}} alt="portada" />
-                <div class="header__texts">
-                    <h2>{{book.myb_title}}</h2>
-                    <h4>{{book.myb_author}}</h4>
+            <div class="block">
+
+                <img class="block__cover" src={{urlcover}}{{book.myb_cover}} alt="portada" />
+                
+                <div class="block__titles">
+                    <h2 class="title">{{book.myb_title}}</h2>
+                    <a class="author">{{book.myb_author}}</a>
                 </div>
                 <span class="material-icons icon--right">expand_more</span>
-            </div>
-            <div class="block__content">
-
-                <section class="datos">
-                    <div class="title">
-                        <h2>{{book.myb_title}}</h2>
-                        <a href="#">{{book.myb_author}}</a>
-                    </div>
+                
+                
+                <section class="content__detail">
+                    
+                    <p>PUBLICADO EN {{book.myb_fecpub}}</p>
                     <hr>
-                    <div class="detalles">
-                        <div class="detleft">
-                            <p>GENERO: {{book.myb_gender}}</p>
-                            <p>FECHA LECTURA: {{book.myb_feclec}}</p>
-                        </div>
-                        <div class="detright">
-                            <p>{{book.myb_pages}} páginas.</p>
-                            <p>{{book.myb_hasmovie}}</p>
-                            <p>{{book.myb_value}}</p>
-                        </div>
-                    </div>
+                    <p>FECHA DE LECTURA: {{book.myb_feclec}}</p>
                     <hr>
-                    <div class="observaciones">
-                        <div class="nota ">
-                            <h3>SYNOPSIS</h3>
-                            <p>sdf{{book.myb_synopsis}}</p>
-                        </div>
-                        <div class="nota ">
-                            <h3>OBSERVACIONES</h3>
-                            <p>rrrr{{book.myb_observ}}</p>
-                        </div>
-                    </div>
+                    <p>GENERO: {{book.myb_gender}}</p>
+                    <hr>
+                    <p class="detail--right">{{book.myb_pages}} páginas.</p>
+                    <hr>
+                    <p class="detail--right">{{book.myb_hasmovie}}</p>
+                    <hr>
+                    <p class="detail--right">{{book.myb_value}}</p>
+                    
                 </section>
-
-                <aside class="aside">
-                    <h4>PUBLICADO EN {{book.myb_fecpub}}</h4>
-                    <img class="portada" src={{urlcover}}{{book.myb_cover}} alt="portada" />
-                </aside>
-
+                
+                <section class="nota synopsis ">
+                    <h3 class="nota__title">SYNOPSIS</h3>
+                    <p class="nota__text">sdf{{book.myb_synopsis}}</p>
+                </section>
+                
+                <section class="nota observ">
+                    <h3 class="nota__title">OBSERVACIONES</h3>
+                    <p class="nota__text">rrrr{{book.myb_observ}}</p>
+                </section>
+                
             </div>
+                
         </div>
     </div>
 
