@@ -14,6 +14,7 @@ import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
 import { AddlibroComponent } from './components/addlibro/addlibro.component';
 import { BookService } from './services/book.service';
+import { AcordionComponent } from './components/acordion/acordion.component';
 
 
 
@@ -25,7 +26,8 @@ import { BookService } from './services/book.service';
     ListbookComponent,
     ErrorComponent,
     HomeComponent,
-    AddlibroComponent
+    AddlibroComponent,
+    AcordionComponent
   ],
   imports: [
     BrowserModule,

@@ -26,4 +26,11 @@ export class BookService{
 
         return this._http.post(this.url + 'saveLibro', params, {headers: headers});
     }
+
+    getBook(id: string):Observable<any>{
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+        return this._http.get(this.url + 'book/'+id,{headers: headers});
+    }
+
 }
