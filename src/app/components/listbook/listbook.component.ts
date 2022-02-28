@@ -6,6 +6,7 @@ import { LibroService } from './../../services/libro.service';
 import { BookService } from './../../services/book.service';
 import { Global } from 'src/app/services/global';
 import { EMPTY } from 'rxjs';
+import { I18nContext } from '@angular/compiler/src/render3/view/i18n/context';
 
 
 @Component({
@@ -26,14 +27,12 @@ export class ListbookComponent implements OnInit, AfterViewChecked {
 
   }
   ngAfterViewChecked(): void {
-    // this.cargarAcordeonLibros(); 
 
     this.cargarEventAcordion();
-
+    
   }
 
   ngOnInit(): void {
-    // this.cargarLibros();
     this.cargarBooks();
   }
 
@@ -47,7 +46,7 @@ export class ListbookComponent implements OnInit, AfterViewChecked {
       },
       complete: () => {
         console.info('Carga de book Completada');
-        console.log(this.books);
+        //console.log(this.books);
       }
     })
   }
@@ -74,19 +73,21 @@ export class ListbookComponent implements OnInit, AfterViewChecked {
 
 
     if (this.onoff) {
-      const iconos = document.querySelectorAll('.icon--right');
+      const iconos = document.querySelectorAll('.icon');
       const covers = document.querySelectorAll('.block__cover');
 
 
       iconos.forEach((icon, i) => {
-        icon.addEventListener('click', (e) => {
-          this.mostrarFicha(icon);
+        icon.addEventListener('click', (e) => {          
+          const padre = icon.parentElement?.parentElement;
+          if(padre !=null) this.showFicha(padre);
         });
       });
 
       covers.forEach((cover, i) => {
         cover.addEventListener('click', (e) => {
-          this.mostrarFicha(cover);
+          const padre = cover.parentElement;
+          if(padre !=null) this.showFicha(padre);
         });
       });
 
@@ -96,68 +97,16 @@ export class ListbookComponent implements OnInit, AfterViewChecked {
   }
 
 
-
-  mostrarFicha(icon: Element): void {
-    const iconos = document.querySelectorAll('.icon--right');
-    const covers = document.querySelectorAll('.block__cover');
-    const blocks = document.querySelectorAll('.block');
-
-    let portada = icon.parentElement?.childNodes[0] as HTMLElement;
-
-    if (icon.innerHTML == 'expand_more' || !portada.classList.contains('imgActive')) {
-
-      blocks.forEach((block, i) => {
-        block.classList.remove('active')
-      });
-      iconos.forEach((icn, i) => {
-        icn.innerHTML = 'expand_more';
-      });
-      covers.forEach((cover, i) => {
-        cover.classList.remove('imgActive')
-      });
-
-      if (icon.parentElement != null) icon.parentElement.classList.add('active')
-      icon.innerHTML = 'expand_less';
-      portada?.classList.add('imgActive');
-
-    } else {
-      icon?.parentElement?.classList.remove('active');
-      icon.innerHTML = 'expand_more';
-      portada?.classList.remove('imgActive');
+  showFicha(padre: Element){
+    if(padre.classList.contains('active')){
+      padre.classList.remove('active');
+      padre.querySelector('.icon')!.innerHTML = 'expand_more';
+      padre.querySelector('.block__cover')?.classList.remove('imgActive')
+    }else{
+      padre.classList.add('active');
+      padre.querySelector('.icon')!.innerHTML = 'expand_less';
+      padre.querySelector('.block__cover')?.classList.add('imgActive')
     }
-  }
-
-
-
-  cargarAcordeonLibros(): void {
-    const block = document.querySelectorAll('.block')
-    const block_header = document.querySelectorAll('.block__header');
-
-    const cover1 = document.querySelectorAll('.portada');
-
-    block_header.forEach((obj, i) => {
-      const icn = obj.querySelector('.icon');
-      const cover = obj.querySelector('img');
-
-      cover?.setAttribute('src', Global.urlCover + this.books[i].myb_cover)
-      cover1[i]?.setAttribute('src', Global.urlCover + this.books[i].myb_cover)
-
-
-      block_header[i].addEventListener('click', () => {
-
-        block.forEach((content, i) => {
-
-          if (block[i].firstChild != content) {
-            block[i].classList.remove('activo');
-            const icns = block[i].querySelector('.icon');
-            if (icns != null) icns.textContent = 'expand_more';
-          }
-        })
-        block[i].classList.add('activo');
-        if (icn != null) icn.textContent = 'expand_less';
-      })
-    });
-
   }
 
 }

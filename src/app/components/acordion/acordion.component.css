@@ -1,58 +1,54 @@
-.acordion__block{
-    
-    margin-left: 1em;
-    margin-right: 1em;
-    margin-top: .3em;
-    background-color: #DDD;
-    color: #555;
-    box-shadow: 0 0 3px #333;  
-    border-radius: .1em .5em .5em .1em; 
+
+.acordion{
+    font-size: 1em;
 }
-
-
-
 .block{
     display: grid;
-    grid-template-rows: 1fr 1fr;
     grid-template-columns: auto 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr;
     grid-template-areas: 
-        "cover title title icon"
+        "cover title title title"
         "cover det1 det2 det3";
-    padding: .1em;
-    height: 4.3em;
+    padding: .1rem;
+    height: 3.6rem;
     overflow: hidden;
     transition: all .2s;
 }
 
 .block__cover{
+    outline: 1px solid #333;
     cursor: pointer;
     grid-area: cover;
-    height: 3.3em;  
-    margin: .5em .5em;  
-    box-shadow: .2em .2em .1em #555;
+    height: 3rem;  
+    margin: .3rem .3rem;  
+    box-shadow: .2rem .2rem .1rem #555;
     transition: all .2s;
 }
-.block__titles{
-    grid-area: title;      
-    margin-left: 1em;
-    margin-bottom: 1em;  
+.block__barup{
+    grid-area: title;     
+    display: flex;
+    justify-content: space-between;
 }
-
-.title{
-    font-size: 2em;
+.block__info{
+    margin-left: 1rem;
+    margin-bottom: 1rem;  
+}
+.info__title{
+    font-size: 1.6rem;
     padding-top: 0.4rem;
 }
-.author{
-    font-size: 1.2em;
+.info__author{
+    font-size: 1rem;
     font-style: italic;
 }
-.icon--right{
+.icon{
     cursor: pointer;
     grid-area: icon;
-    padding-top: .2em;
-    margin-right: .2em;
+    height: auto;
+    padding-top: .2rem;
+    margin-right: .2rem;
     text-align: right;
-    font-size: 2.2em;
+    font-size: 2.2rem;
     font-family: 'Material Icons';   
 }
 
@@ -62,7 +58,7 @@
     grid-area: det1;
     padding: 1em;
     padding-bottom: .4em; 
-    font-size: 1.2em;
+    font-size: 1rem;
     line-height: 1.5em;
 }
 .detail--right{
@@ -75,44 +71,42 @@
     grid-area: det3; 
 }
 .nota{
-    margin: .5em;  
-    margin-right: .5em;
-    border: 1px outset #333;
-    box-shadow: 0 0 8px #333;
+    margin: .5rem;  
+    margin-right: .5rem;
+    border: 1px outset #555;
+    box-shadow: .2rem .2rem .1rem #555;
     background-color: #EEE;
-    padding: .6em;
+    padding: .6rem;
 }
 .nota__title{
     color: #CCC;
     text-align: center;
     text-shadow: 1px 1px 2px #111;
     text-decoration: underline;
-    font-size: 1.4em;
+    font-size: 1.2rem;
 }
 .nota__text{
-    margin: .8em;
+    margin: .6rem;
     text-align: justify;
-    text-indent: .5em;
-    font-size: 1.2em;
+    text-indent: .5rem;
+    font-size: 1.2rem;
 }
 .start{
     color: yellow;
-    font-size: 1.3em;
-    letter-spacing: -26px;
-    margin-top: 10px;
-    margin-right: 25px;
+    font-size: 1.8rem;
+    letter-spacing: -1.9rem;
+    margin-top: .8rem;
+    margin-right: 1.8rem;
     
-    text-shadow: 1px 1px 2px #111,
-                 -2px -2px 4px #999,
-                 0px 0px 5px #333;
+    text-shadow: .1rem .1rem .1rem #222;
 
 }
 
 .imgActive{
-    height: 24.8em ;    
+    height: 19rem ;    
 }
 
 .active{
-    height: 26em;
+    height: 20rem;
     padding: .1em;  
 }

@@ -8,17 +8,16 @@ import { Global } from 'src/app/services/global';
   styleUrls: ['./acordion.component.css']
 })
 export class AcordionComponent implements OnInit {
-  
-  @Input()  book!: Book;
-  public urlcover: String = Global.urlCover;
-  private onoff: boolean = true;
-  
-  constructor(
-    
-  ) { }
 
-  ngOnInit(): void {
+  @Input() book!: Book;
+  public urlcover: String = Global.urlCover;
+
+  constructor() {
+
   }
 
+  ngOnInit(): void {
+    
+  }
 
-}
+  }
