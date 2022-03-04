@@ -15,6 +15,7 @@ import { RouterModule } from '@angular/router';
 import { AddlibroComponent } from './components/addlibro/addlibro.component';
 import { BookService } from './services/book.service';
 import { AcordionComponent } from './components/acordion/acordion.component';
+import { MenunavbarComponent } from './components/menunavbar/menunavbar.component';
 
 
 
@@ -27,7 +28,8 @@ import { AcordionComponent } from './components/acordion/acordion.component';
     ErrorComponent,
     HomeComponent,
     AddlibroComponent,
-    AcordionComponent
+    AcordionComponent,
+    MenunavbarComponent
   ],
   imports: [
     BrowserModule,
